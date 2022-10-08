@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { GlobalStyle } from "./components/GlobalStyles/GlobalStyles";
+import Wrapper from "./components/GeneralWrapper/Wrapper";
+import ContainerTodo from "./components/containerTodo/ContainerTodo";
+import FormTodo from "./components/FormTodo/FormTodo";
+import ContainerTasks from "./components/ContainerTasks/ContainerTasks";
+import { useSelector } from "react-redux";
 function App() {
+  const state = useSelector((state) => state.todo);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Wrapper>
+        <ContainerTodo>
+          <FormTodo tasks={state}></FormTodo>
+          <ContainerTasks tasks={state}></ContainerTasks>
+        </ContainerTodo>
+      </Wrapper>
+      <GlobalStyle />
+    </>
   );
 }
 
