@@ -6,6 +6,7 @@ import ContainerTasks from "./components/ContainerTasks/ContainerTasks";
 import { useSelector } from "react-redux";
 function App() {
   const state = useSelector((state) => state.todo);
+  localStorage.setItem("tasks", JSON.stringify(state));
   return (
     <>
       <Wrapper>

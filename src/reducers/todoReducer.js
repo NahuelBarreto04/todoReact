@@ -1,6 +1,6 @@
 import { ADD_TASK, COMPLETE_TASK, DELETE_TASK } from "../types";
 
-export const initialState = [];
+export const initialState = JSON.parse(localStorage.getItem("tasks")) || [];
 export const todoReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TASK:
@@ -14,6 +14,6 @@ export const todoReducer = (state = initialState, action) => {
           : task;
       });
     default:
-      return (state = initialState);
+      return (state = []);
   }
 };
