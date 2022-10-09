@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
-import { ADD_TASK } from '../../types'
+import { ADD_TASK, DELETE_ALL } from '../../types'
 
 
 const InputForm = styled.input`
@@ -49,7 +49,7 @@ const FormTodo = ({tasks}) => {
     <FormCont onSubmit={handleSubmit}>
         <InputForm type="text" name='task' placeholder='Ingresa una tarea...'/>
         <ButtonTest>Save</ButtonTest>
-        <ButtonTest type='button' onClick={()=>dispatch({type: "DELETE_ALL"})}>Delete all</ButtonTest>
+        <ButtonTest type='button' onClick={()=>dispatch({type: DELETE_ALL})}>Delete all</ButtonTest>
     </FormCont>
         
 
