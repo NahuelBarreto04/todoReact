@@ -1,5 +1,5 @@
 import { ADD_TASK, COMPLETE_TASK, DELETE_ALL, DELETE_TASK } from "../types";
-export const initialState = JSON.parse(localStorage.getItem("tasks"));
+export const initialState = JSON.parse(localStorage.getItem("tasks")) || [];
 export const todoReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TASK:
